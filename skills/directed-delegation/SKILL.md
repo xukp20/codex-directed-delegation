@@ -1,0 +1,64 @@
+---
+name: directed-delegation
+description: "Write concrete assignments and verify results when the user requests subagents, parallel agent work, or a named-model subagent such as Luna. Also use when explicitly invoked. Do not activate from task size, complexity, or uncertainty alone."
+---
+
+# Directed Delegation
+
+Help a capable lead agent direct a less expensive execution agent through clear assignments. Model names are examples, not fixed roles: the lead owns consequential engineering decisions and integration within the user’s authorization; associates gather evidence, implement settled plans, and check defined criteria. Decisions explicitly reserved by the user remain with the user.
+
+## Invocation
+
+Use when the user explicitly requests delegated agent work or invokes this skill. A request to discuss or configure subagents authorizes only that discussion or configuration, not launching work. Once delegation is requested, do not ask again for each in-scope assignment. Use the existing subagent tools and their live contracts; do not reproduce their orchestration API here or create sidebar tasks as substitutes.
+
+## Write the assignment
+
+Resolve the choices that determine correctness before dispatch. If the approach is unsettled, assign evidence collection rather than asking the associate to silently choose the architecture. Give enough context to execute independently without copying unrelated history or abandoned proposals.
+
+Include the following information when it matters; this is a compact briefing, not a mandatory form:
+
+```text
+Outcome and use: Deliver [result] so the lead can [next decision/action].
+Inputs: Work in [absolute location]. Read [authoritative sources] and cover [range].
+Current basis: [verified facts], [accepted decisions], [hypotheses still to test].
+Assignment: [specific questions, rules, or ordered steps]. Preserve [invariants].
+Boundaries: [read/write scope], [other writers], [decisions reserved for the lead].
+Acceptance: [observable completion criteria and focused verification].
+Exceptions: Handle [routine cases]; return [material deviations] to the lead.
+Return: [artifact/result], evidence locations, coverage, unresolved items, and checks.
+```
+
+- Replace vague instructions such as “check everything” with an inventory, question set, or observable criteria. Supply a small example when a classification or transformation is otherwise ambiguous.
+- Identify the authoritative plan and exact assigned portion. References can carry detail; a summary must not discard constraints the associate needs. Do not require reading an entire project when a bounded source set suffices.
+- Separate observations from hypotheses. For independent review, provide the candidate, requirements, and primary evidence without the author's verdict or suggested findings.
+- Give permission to resolve routine in-scope details, but reserve changed requirements, architecture, runtime configuration, and consequential recovery choices for the lead. Do not prescribe shell commands when only the outcome matters; do supply exact steps for fragile ordered operations.
+- For writers, name their owned files or data slice and shared hotspots. State that they are not alone, must preserve others' edits, and must not revert concurrent work. Read-only reports may have a separate permitted output path.
+- For large inputs, assign explicit coverage and manageable batches. Preserve source locations and boundary context. A large context window is capacity, not a reason to inherit all conversation history.
+
+## Collect, correct, and accept
+
+Require a concise conclusion with traceable evidence rather than raw logs. Distinguish checked, skipped, failed, and unknown items; “no issues found” applies only to the inspected scope. For changes, obtain the actual artifact or diff and completed verification results, including failures that affect acceptance.
+
+Check the result against the assignment and inspect consequential claims at their source. Scale verification to risk: representative sampling can check routine extraction, but does not certify full coverage or high-consequence invariants. A successful command or another agent's approval alone does not establish task completion.
+
+Send focused follow-ups describing the mismatch, evidence, desired correction, and unchanged boundaries. Reuse the associate for related corrections; use a separate reviewer when independence matters. If the plan is invalid, evidence conflicts, or the same failure recurs without new information, resolve the issue at the lead level instead of repeating the assignment. Ask the user only for genuinely user-owned choices that remain outside existing authorization.
+
+The lead combines outputs, resolves cross-slice conflicts, and owns the final conclusion. Do not reread every low-risk input by default and erase the benefit of delegation. Keep substantive source evidence accessible for targeted checks.
+
+## Task references
+
+Read only the reference matching the assignment; combine two when the task actually has both stages.
+
+| Assignment | Reference |
+| --- | --- |
+| Search, extract, compare, and summarize many sources | [Research and synthesis](references/research-and-synthesis.md) |
+| Trace code, logs, and observed failures | [Evidence and triage](references/evidence-and-triage.md) |
+| Implement a settled bounded plan | [Planned implementation](references/planned-implementation.md) |
+| Convert or repair many items under explicit rules | [Batch transformation](references/batch-transformation.md) |
+| Inspect artifacts against defined criteria | [Criteria-based review](references/criteria-based-review.md) |
+| Run an approved procedure and report its outcome | [Controlled execution](references/controlled-execution.md) |
+
+## Optional branches
+
+- When deciding what to delegate, how to split work, or when to dispatch dependent batches, read [selection and timing](references/selection-and-timing.md).
+- Only when asked to create or change a subagent profile, read [configuration](references/configure-subagent.md). It includes an optional Luna max, nominal 1m, standard-tier profile. Normal delegation does not install or change configuration.

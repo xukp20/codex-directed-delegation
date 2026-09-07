@@ -1,0 +1,8 @@
+interface:
+  display_name: "Directed Delegation"
+  short_description: "Concrete assignments for requested subagent work"
+  default_prompt: "Use $directed-delegation to assign this work to subagents with clear inputs, boundaries, and acceptance criteria."
+
+# Discovery matches an explicit request for subagents, not task complexity.
+policy:
+  allow_implicit_invocation: true
