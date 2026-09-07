@@ -44,7 +44,7 @@ review the stable result against the requirements.
 
 The skill may be selected when the user explicitly requests subagents, parallel agent work, or a named-model subagent. Ordinary task size or uncertainty does not activate it. Its discovery policy allows matching these explicit natural-language requests, so spelling the skill name is optional. A request to discuss or configure delegation does not launch agents.
 
-Once requested, the lead can dispatch in-scope assignments without repeatedly asking permission. Existing tool contracts and repository policies still apply.
+A request to use subagents as needed lets the lead organize delegation throughout a long execution, including parallel exploration and large-scale inspection, without asking again for each in-scope assignment. Reuse an associate for related follow-ups that benefit from its context; start independently for unrelated work or independent review. Existing tool contracts and repository policies still apply.
 
 ## Assignment contract
 

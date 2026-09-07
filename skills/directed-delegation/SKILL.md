@@ -9,7 +9,7 @@ Help a capable lead agent direct a less expensive execution agent through clear 
 
 ## Invocation
 
-Use when the user explicitly requests delegated agent work or invokes this skill. A request to discuss or configure subagents authorizes only that discussion or configuration, not launching work. Once delegation is requested, do not ask again for each in-scope assignment. Use the existing subagent tools and their live contracts; do not reproduce their orchestration API here or create sidebar tasks as substitutes.
+Use when the user explicitly requests delegated agent work or invokes this skill. A request to discuss or configure subagents authorizes only that discussion or configuration, not launching work. A request to use subagents as needed grants ongoing delegation discretion within the authorized task, including long-running work; do not ask again for each in-scope assignment. Use the existing subagent tools and their live contracts; do not reproduce their orchestration API here or create sidebar tasks as substitutes.
 
 ## Write the assignment
 
@@ -60,5 +60,5 @@ Read only the reference matching the assignment; combine two when the task actua
 
 ## Optional branches
 
-- When deciding what to delegate, how to split work, or when to dispatch dependent batches, read [selection and timing](references/selection-and-timing.md).
+- When the user asks you to organize subagents as needed during execution, read [selection, timing, and reuse](references/selection-and-timing.md). Also use it for task splitting, dependent dispatch, or choosing whether to reuse an associate; apply it as new work arises without rereading it for every assignment.
 - Only when asked to create or change a subagent profile, read [configuration](references/configure-subagent.md). It includes an optional Luna max, nominal 1m, standard-tier profile. Normal delegation does not install or change configuration.
