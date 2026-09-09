@@ -1,6 +1,6 @@
 ---
 name: directed-delegation
-description: "Write concrete assignments and verify results when the user requests subagents, parallel agent work, or a named-model subagent such as Sol or Luna. Also use when explicitly invoked. Do not activate from task size, complexity, or uncertainty alone."
+description: "Select, brief, and verify subagents when the user requests delegation or the agent identifies concrete independent subtasks worth parallelizing. Also use when explicitly invoked. Task size or uncertainty alone is not a reason to delegate."
 ---
 
 # Directed Delegation
@@ -9,7 +9,7 @@ Help a capable lead agent direct a less expensive execution agent through clear 
 
 ## Invocation
 
-Use when the user explicitly requests delegated agent work or invokes this skill. A request to discuss or configure subagents authorizes only that discussion or configuration, not launching work. A request to use subagents as needed grants ongoing delegation discretion within the authorized task, including long-running work; do not ask again for each in-scope assignment. Use the existing subagent tools and their live contracts; do not reproduce their orchestration API here or create sidebar tasks as substitutes.
+Use when the user requests delegated work, invokes this skill, or the lead identifies concrete independent subtasks whose parallel execution would materially help the authorized task. The lead may select the skill and organize those assignments without a separate user request, subject to current session rules and explicit user limits. Keep short, tightly coupled work local when coordination adds no useful capacity. A request to discuss or configure subagents authorizes only that discussion or configuration, not launching work. A request to use subagents as needed grants ongoing delegation discretion within the authorized task, including long-running work; do not ask again for each in-scope assignment. Use the existing subagent tools and their live contracts; do not reproduce their orchestration API here or create sidebar tasks as substitutes.
 
 ## Write the assignment
 
@@ -60,6 +60,6 @@ Read only the reference matching the assignment; combine two when the task actua
 
 ## Optional branches
 
-- When the user asks you to organize subagents as needed during execution, read [selection, timing, and reuse](references/selection-and-timing.md). Also use it for task splitting, dependent dispatch, or choosing whether to reuse an associate; apply it as new work arises without rereading it for every assignment.
+- When organizing user-requested or self-selected delegation during execution, read [selection, timing, and reuse](references/selection-and-timing.md). Also use it for task splitting, dependent dispatch, or choosing whether to reuse an associate; apply it as new work arises without rereading it for every assignment.
 - Only when asked to create or change a subagent profile, read [configuration](references/configure-subagent.md). It includes selectable Luna max / nominal 1m and Sol high / nominal 272k standard-tier profiles. Normal delegation does not install or change configuration.
 - For design, implementation, or review with a material engineering complexity tradeoff, read [engineering guidance](references/engineering-guidance.md). It explains how to suggest the optional `right-sized-engineering` skill and carry an already authorized standard into assignments and acceptance, including Sol/Luna work. Model selection alone does not activate that companion.

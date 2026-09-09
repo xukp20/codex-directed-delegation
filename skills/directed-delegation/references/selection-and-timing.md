@@ -4,7 +4,7 @@ Use this branch when the user asks the lead to use or organize subagents as need
 
 ## Ongoing delegation
 
-An instruction such as “complete this work and use subagents as needed” authorizes the lead to select, dispatch, and reuse associates throughout that task. Reassess at meaningful stage changes: a long execution may expose broad exploration, large-scale inspection, analysis, or well-specified implementation suitable for one or several associates. Do not wait for the user to enumerate each subtask or ask permission again. Respect subsequent limits and the overall task scope; this does not authorize unrelated work or unrequested configuration changes.
+When the user requests delegation, or the lead identifies independent subtasks worth parallelizing under the current session rules, select, dispatch, and reuse associates within the authorized task. A separate user instruction to use subagents is not required for each such decision. Reassess at meaningful stage changes: a long execution may expose broad exploration, large-scale inspection, analysis, or well-specified implementation suitable for one or several associates. Do not wait for the user to enumerate each subtask or ask permission again. Respect subsequent limits and the overall task scope; this does not authorize unrelated work or unrequested configuration changes.
 
 Use multiple associates when independent inputs or questions justify parallel work, and retain tightly coupled or decision-heavy work with the lead. “As needed” does not impose a fixed agent count or require delegation at every stage.
 

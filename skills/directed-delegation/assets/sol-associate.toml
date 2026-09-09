@@ -1,5 +1,5 @@
 name = "sol_associate"
-description = "Sol high associate for explicitly requested research, planned implementation, and criteria-based review. The assignment defines the role; do not select merely because a task is large."
+description = "Sol high associate for bounded research, planned implementation, and criteria-based review. The assignment defines the role; do not select merely because a task is large."
 model = "gpt-5.6-sol"
 model_reasoning_effort = "high"
 model_context_window = 272000

@@ -1,5 +1,5 @@
 name = "luna_associate"
-description = "Luna max associate for explicitly requested research, planned implementation, and criteria-based review. The assignment defines the role; do not select merely because a task is large."
+description = "Luna max associate for bounded research, planned implementation, and criteria-based review. The assignment defines the role; do not select merely because a task is large."
 model = "gpt-5.6-luna"
 model_reasoning_effort = "max"
 model_context_window = 1000000

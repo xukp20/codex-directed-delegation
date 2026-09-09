@@ -9,7 +9,7 @@
     <img alt="Codex Skill" src="https://img.shields.io/badge/Codex-Skill-2563eb?style=flat-square">
   </a>
   <img alt="Focus" src="https://img.shields.io/badge/focus-directed%20subagents-0f8f88?style=flat-square">
-  <img alt="Invocation" src="https://img.shields.io/badge/use-requested%20delegation-d97706?style=flat-square">
+  <img alt="Invocation" src="https://img.shields.io/badge/use-purposeful%20delegation-d97706?style=flat-square">
 </p>
 
 <p align="center">
@@ -42,9 +42,9 @@ Use a Luna subagent to implement this accepted plan, and another subagent to
 review the stable result against the requirements.
 ```
 
-The skill may be selected when the user explicitly requests subagents, parallel agent work, or a named-model subagent. Ordinary task size or uncertainty does not activate it. Its discovery policy allows matching these explicit natural-language requests, so spelling the skill name is optional. A request to discuss or configure delegation does not launch agents.
+The skill may be selected when the user requests subagents or the lead identifies concrete independent subtasks worth parallelizing within the authorized task. No separate request to invoke the skill is needed. Task size or uncertainty alone does not justify delegation; coordination should add useful capacity. Current session rules and explicit user limits still apply. A request only to discuss or configure delegation does not launch agents.
 
-A request to use subagents as needed lets the lead organize delegation throughout a long execution, including parallel exploration and large-scale inspection, without asking again for each in-scope assignment. Reuse an associate for related follow-ups that benefit from its context; start independently for unrelated work or independent review. Existing tool contracts and repository policies still apply.
+The lead can reassess useful delegation throughout a long execution, including parallel exploration and large-scale inspection, without asking again for each in-scope assignment. Reuse an associate for related follow-ups that benefit from its context; start independently for unrelated work or independent review. Existing tool contracts and repository policies still apply.
 
 ## Assignment contract
 
