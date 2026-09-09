@@ -16,6 +16,14 @@ A reviewer on a smaller model can detect specified violations and gather counter
 
 Account for briefing, waiting, and verification costs. Keep short tightly coupled work local when delegation adds no useful capacity. Use scripts for deterministic enumeration or transformation; an agent is useful where inspection or interpretation remains necessary.
 
+## Choose an available model
+
+Honor the user's model choice first. Otherwise, start with Luna for bounded extraction, repetitive inspection, or settled changes that can be checked economically; consider Sol for bounded analysis or implementation requiring more synthesis. These are starting heuristics, not capability guarantees. Adjust using observed results, input size, and the cost of briefing and verification; keep consequential decisions with the lead.
+
+Use a matching registered role when available. The bundled Luna preset uses max reasoning and nominal 1m context; Sol uses high reasoning and nominal 272k. Normal delegation does not install them. If the role is absent, use explicit model and effort only when the live tool can satisfy the requested settings; do not silently inherit the lead's model or claim an unverified context window. A smaller window calls for bounded inputs or batches, not an automatic configuration increase.
+
+For material complexity tradeoffs in design, development, or review, see [engineering guidance](engineering-guidance.md). Apply the same evidence standards across models; choosing Sol or Luna is not permission to activate an optional skill.
+
 ## Split and dispatch
 
 - Split read-heavy work by source range, subsystem, or independent question. Assign coverage explicitly to prevent gaps and unnecessary duplication.

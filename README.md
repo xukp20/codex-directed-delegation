@@ -16,13 +16,13 @@
   <a href="#why">Why</a> &middot;
   <a href="#use">Use</a> &middot;
   <a href="#install">Install</a> &middot;
-  <a href="#optional-luna-associate">Luna Profile</a> &middot;
+  <a href="#optional-associate-profiles">Associate Profiles</a> &middot;
   <a href="skills/directed-delegation/SKILL.md">Skill Reference</a>
 </p>
 
 `directed-delegation` helps a capable lead agent give less expensive subagents concrete, independently executable assignments. The lead retains consequential decisions and final integration; associates handle substantial reading, settled implementation, transformations, and checks against explicit criteria.
 
-The workflow is model-independent. Astra or Sol can lead and Luna can assist, but neither model family is required.
+The workflow is model-independent. Astra can lead with Sol or Luna associates, and Sol can also lead, but neither model family is required.
 
 ## Why
 
@@ -85,23 +85,36 @@ ln -s "$PWD/skills/directed-delegation" \
 
 Inspect an existing destination before replacing it. Reload Codex if discovery does not refresh. Installing the skill does not change models, agent profiles, permissions, or service tiers.
 
-## Optional Luna associate
+## Optional associate profiles
 
-The bundled [profile](skills/directed-delegation/assets/luna-associate.toml) is named `luna_associate`: its task may be research, implementation, execution, or review.
+Each profile is a general associate: its assignment may be research, implementation, execution, or review.
 
-| Setting | Example value |
-| --- | --- |
-| Model | `gpt-5.6-luna` |
-| Reasoning | `max` |
-| Nominal context | `1000000` tokens |
-| Service tier | `default` (standard; no fast tier) |
+| Setting | [Luna](skills/directed-delegation/assets/luna-associate.toml) | [Sol](skills/directed-delegation/assets/sol-associate.toml) |
+| --- | --- | --- |
+| Role | `luna_associate` | `sol_associate` |
+| Model | `gpt-5.6-luna` | `gpt-5.6-sol` |
+| Reasoning | `max` | `high` |
+| Nominal context | `1000000` tokens | `272000` tokens |
+| Service tier | `default` (standard) | `default` (standard) |
 
 ```text
-Use $directed-delegation to configure luna_associate from the bundled example.
-Register it in my main Codex config. Do not change other agent defaults.
+Use $directed-delegation to configure sol_associate from the bundled example.
+Register it in my main Codex config. Keep its nominal context at 272000 tokens.
+Do not change other agent defaults.
 ```
 
-Follow the [configuration reference](skills/directed-delegation/references/configure-subagent.md) only when installation or customization is requested. It covers standalone role metadata, main-config registration, replacement, and verification. The nominal context setting is not a guarantee of the runtime's effective token window. Other models or settings can be requested explicitly.
+Follow the [configuration reference](skills/directed-delegation/references/configure-subagent.md) only when installation or customization is requested. The examples do not install themselves. Sol sets context explicitly to avoid inheriting a larger parent window. Nominal context does not guarantee the runtime's effective token window. Other settings can be requested explicitly.
+
+## Optional engineering standards
+
+For design, development, or review with material complexity tradeoffs, the lead can suggest `right-sized-engineering`, including when directing Sol/Luna associates. That companion remains explicit opt-in: selecting a model does not enable it. Once the user enables it for a task, the lead passes its installed path and concrete scope constraints to relevant associates and applies the standard during acceptance.
+
+See [engineering guidance](skills/directed-delegation/references/engineering-guidance.md) for brief placement and design, implementation, and review criteria. The companion is optional and must be available separately; this repository does not bundle or install it.
+
+```text
+Use a Sol subagent to implement the accepted plan. Apply $right-sized-engineering
+within the assigned scope and return the diff with focused verification results.
+```
 
 ## Repository layout
 
@@ -111,7 +124,9 @@ codex-directed-delegation/
 └── skills/directed-delegation/
     ├── SKILL.md
     ├── agents/openai.yaml
-    ├── assets/luna-associate.toml
+    ├── assets/
+    │   ├── luna-associate.toml
+    │   └── sol-associate.toml
     └── references/
         ├── research-and-synthesis.md
         ├── evidence-and-triage.md
@@ -120,7 +135,8 @@ codex-directed-delegation/
         ├── criteria-based-review.md
         ├── controlled-execution.md
         ├── selection-and-timing.md
-        └── configure-subagent.md
+        ├── configure-subagent.md
+        └── engineering-guidance.md
 ```
 
 ## Validation
@@ -132,7 +148,7 @@ python /path/to/skill-creator/scripts/quick_validate.py \
   skills/directed-delegation
 ```
 
-Parse the example TOML and UI YAML, check relative links, and review realistic assignments for trigger accuracy, scope, and usable evidence. Syntax validation does not establish behavioral quality or runtime model configuration.
+Parse both example TOML files and UI YAML, check relative links, and review realistic assignments for trigger accuracy, scope, and usable evidence. Syntax validation does not establish behavioral quality or runtime model configuration.
 
 ## Boundaries
 

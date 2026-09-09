@@ -14,6 +14,8 @@ Separate confirmed defects from questions; report what was not checked.
 Do not change the candidate. Write only [optional report path].
 ```
 
+When `right-sized-engineering` is already enabled, use [engineering guidance](engineering-guidance.md) to pass the standard without suggesting findings. Require reachable triggers and owned consequences for blocking issues; keep optional simplifications distinct.
+
 ## Return and acceptance
 
 Return material findings and actual coverage, including a scoped “none found” when appropriate. Do not demand speculative hardening unrelated to supported behavior. Identify what evidence would settle uncertainty.

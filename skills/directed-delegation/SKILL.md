@@ -1,6 +1,6 @@
 ---
 name: directed-delegation
-description: "Write concrete assignments and verify results when the user requests subagents, parallel agent work, or a named-model subagent such as Luna. Also use when explicitly invoked. Do not activate from task size, complexity, or uncertainty alone."
+description: "Write concrete assignments and verify results when the user requests subagents, parallel agent work, or a named-model subagent such as Sol or Luna. Also use when explicitly invoked. Do not activate from task size, complexity, or uncertainty alone."
 ---
 
 # Directed Delegation
@@ -61,4 +61,5 @@ Read only the reference matching the assignment; combine two when the task actua
 ## Optional branches
 
 - When the user asks you to organize subagents as needed during execution, read [selection, timing, and reuse](references/selection-and-timing.md). Also use it for task splitting, dependent dispatch, or choosing whether to reuse an associate; apply it as new work arises without rereading it for every assignment.
-- Only when asked to create or change a subagent profile, read [configuration](references/configure-subagent.md). It includes an optional Luna max, nominal 1m, standard-tier profile. Normal delegation does not install or change configuration.
+- Only when asked to create or change a subagent profile, read [configuration](references/configure-subagent.md). It includes selectable Luna max / nominal 1m and Sol high / nominal 272k standard-tier profiles. Normal delegation does not install or change configuration.
+- For design, implementation, or review with a material engineering complexity tradeoff, read [engineering guidance](references/engineering-guidance.md). It explains how to suggest the optional `right-sized-engineering` skill and carry an already authorized standard into assignments and acceptance, including Sol/Luna work. Model selection alone does not activate that companion.

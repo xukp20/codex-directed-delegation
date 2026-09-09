@@ -4,15 +4,23 @@ Read only when the user asks to create, replace, or customize a subagent profile
 
 ## Example and registration
 
-[The Luna associate profile](../assets/luna-associate.toml) defines a general associate, not a permanently read-only researcher or implementation-only worker. Each assignment supplies its responsibility and write boundary.
+Choose a general associate profile; each assignment supplies its responsibility and write boundary.
 
-Defaults: `gpt-5.6-luna`, `max`, nominal `1000000` context tokens, and `service_tier = "default"` (standard, not fast). These are a user-selectable example, not requirements of the delegation workflow. Do not assume every model supports these values.
+| Profile | Model | Reasoning | Nominal context |
+| --- | --- | --- | --- |
+| [luna_associate](../assets/luna-associate.toml) | `gpt-5.6-luna` | `max` | `1000000` |
+| [sol_associate](../assets/sol-associate.toml) | `gpt-5.6-sol` | `high` | `272000` |
 
-Use a standalone role file containing `name`, `description`, and `developer_instructions`, plus the selected model settings. For a personal installation, copy the example to `$CODEX_HOME/agents/luna_associate.toml` (normally `~/.codex/agents/`). Register it explicitly in the main config when using named role references:
+Both examples use `service_tier = "default"` (standard, not fast). These are selectable presets, not requirements of the workflow or claims about every model's supported settings. Sol explicitly sets 272k so it does not inherit a larger parent context; do not omit that setting or enlarge it to 1m when installing this preset.
+
+Use a standalone role file containing `name`, `description`, and `developer_instructions`, plus the selected model settings. For a personal installation, copy the selected example to `$CODEX_HOME/agents/<role_name>.toml` (normally `~/.codex/agents/`). Register only the requested roles explicitly in the main config when using named role references:
 
 ```toml
 [agents.luna_associate]
 config_file = "agents/luna_associate.toml"
+
+[agents.sol_associate]
+config_file = "agents/sol_associate.toml"
 ```
 
 The role name and the file's `name` must agree. Current Codex also discovers standalone files in the agents directory. Explicit registration points to the same file; do not create a second profile with a different identity for it.

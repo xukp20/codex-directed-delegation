@@ -15,6 +15,8 @@ If the plan conflicts with the current API or requires a new public contract,
 return the conflict and smallest options to the lead before expanding the change.
 ```
 
+When `right-sized-engineering` is already enabled, use [engineering guidance](engineering-guidance.md) to carry its path and task-specific scope constraints into the brief. Check extra mechanisms against the current contract when accepting the diff.
+
 ## Return and acceptance
 
 Return changed files, resulting behavior, exact checks and outcomes, and deviations. No commit, push, deployment, or broad refactor is implied by a local implementation assignment.
