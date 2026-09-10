@@ -22,7 +22,7 @@
 
 `directed-delegation` helps a capable lead agent give less expensive subagents concrete, independently executable assignments. The lead retains consequential decisions and final integration; associates handle substantial reading, settled implementation, transformations, and checks against explicit criteria.
 
-The workflow is model-independent. Astra can lead with Sol or Luna associates, and Sol can also lead, but neither model family is required.
+The workflow is model-independent. Optional model cards provide maintained selection advice and configuration presets; explicit user choices take precedence.
 
 ## Why
 
@@ -87,15 +87,15 @@ Inspect an existing destination before replacing it. Reload Codex if discovery d
 
 ## Optional associate profiles
 
-Each profile is a general associate: its assignment may be research, implementation, execution, or review.
+Each profile is a general associate: its assignment may be research, implementation, execution, or review. Consult the [model preset index](skills/directed-delegation/references/models/index.md) when selecting automatically, then read only the relevant card. Recommendations reflect working preferences rather than exclusive model capabilities.
 
-| Setting | [Luna](skills/directed-delegation/assets/luna-associate.toml) | [Sol](skills/directed-delegation/assets/sol-associate.toml) |
-| --- | --- | --- |
-| Role | `luna_associate` | `sol_associate` |
-| Model | `gpt-5.6-luna` | `gpt-5.6-sol` |
-| Reasoning | `max` | `high` |
-| Nominal context | `1000000` tokens | `272000` tokens |
-| Service tier | `default` (standard) | `default` (standard) |
+| Setting | [Luna](skills/directed-delegation/assets/models/gpt-5.6-luna.toml) | [Sol](skills/directed-delegation/assets/models/gpt-5.6-sol.toml) | [Astra](skills/directed-delegation/assets/models/gpt-6-astra.toml) |
+| --- | --- | --- | --- |
+| Role | `luna_associate` | `sol_associate` | `astra_associate` |
+| Model | `gpt-5.6-luna` | `gpt-5.6-sol` | `gpt-6-astra` |
+| Reasoning | `max` | `high` | `low`; explicitly choose `medium` for difficult foundational design |
+| Nominal context | `1000000` tokens | `272000` tokens | No override; verify resolved value |
+| Service tier | `default` (standard) | `default` (standard) | `default` (standard) |
 
 ```text
 Use $directed-delegation to configure sol_associate from the bundled example.
@@ -107,7 +107,7 @@ Follow the [configuration reference](skills/directed-delegation/references/confi
 
 ## Optional engineering standards
 
-For design, development, or review with material complexity tradeoffs, the lead can suggest `right-sized-engineering`, including when directing Sol/Luna associates. That companion remains explicit opt-in: selecting a model does not enable it. Once the user enables it for a task, the lead passes its installed path and concrete scope constraints to relevant associates and applies the standard during acceptance.
+The Sol and Luna cards recommend `right-sized-engineering` for engineering assignments with material complexity tradeoffs, addressing observed overengineering and scope expansion. That companion remains explicit opt-in: selecting a model does not enable it. Once the user enables it for a task, the lead passes its installed path and concrete scope constraints to relevant associates and applies the standard during acceptance.
 
 See [engineering guidance](skills/directed-delegation/references/engineering-guidance.md) for brief placement and design, implementation, and review criteria. The companion is optional and must be available separately; this repository does not bundle or install it.
 
@@ -125,8 +125,10 @@ codex-directed-delegation/
     ├── SKILL.md
     ├── agents/openai.yaml
     ├── assets/
-    │   ├── luna-associate.toml
-    │   └── sol-associate.toml
+    │   └── models/
+    │       ├── gpt-6-astra.toml
+    │       ├── gpt-5.6-sol.toml
+    │       └── gpt-5.6-luna.toml
     └── references/
         ├── research-and-synthesis.md
         ├── evidence-and-triage.md
@@ -136,7 +138,12 @@ codex-directed-delegation/
         ├── controlled-execution.md
         ├── selection-and-timing.md
         ├── configure-subagent.md
-        └── engineering-guidance.md
+        ├── engineering-guidance.md
+        └── models/
+            ├── index.md
+            ├── gpt-6-astra.md
+            ├── gpt-5.6-sol.md
+            └── gpt-5.6-luna.md
 ```
 
 ## Validation
@@ -148,7 +155,7 @@ python /path/to/skill-creator/scripts/quick_validate.py \
   skills/directed-delegation
 ```
 
-Parse both example TOML files and UI YAML, check relative links, and review realistic assignments for trigger accuracy, scope, and usable evidence. Syntax validation does not establish behavioral quality or runtime model configuration.
+Parse the example TOML files and UI YAML, check relative links, and review realistic assignments for trigger accuracy, scope, and usable evidence. Syntax validation does not establish behavioral quality or runtime model configuration.
 
 ## Boundaries
 

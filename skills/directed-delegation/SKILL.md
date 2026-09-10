@@ -61,5 +61,6 @@ Read only the reference matching the assignment; combine two when the task actua
 ## Optional branches
 
 - When organizing user-requested or self-selected delegation during execution, read [selection, timing, and reuse](references/selection-and-timing.md). Also use it for task splitting, dependent dispatch, or choosing whether to reuse an associate; apply it as new work arises without rereading it for every assignment.
-- Only when asked to create or change a subagent profile, read [configuration](references/configure-subagent.md). It includes selectable Luna max / nominal 1m and Sol high / nominal 272k standard-tier profiles. Normal delegation does not install or change configuration.
+- When choosing a model automatically, consult the optional [model presets](references/models/index.md), then read only the relevant model card. Explicit user choices take precedence; the workflow does not require these models.
+- Only when asked to create or change a subagent profile, read [configuration](references/configure-subagent.md). Normal delegation does not install or change configuration.
 - For design, implementation, or review with a material engineering complexity tradeoff, read [engineering guidance](references/engineering-guidance.md). It explains how to suggest the optional `right-sized-engineering` skill and carry an already authorized standard into assignments and acceptance, including Sol/Luna work. Model selection alone does not activate that companion.
