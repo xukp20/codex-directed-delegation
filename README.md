@@ -30,6 +30,8 @@ A smaller model benefits from knowing what is settled, what evidence to inspect,
 
 This skill concentrates on writing that brief and accepting the result. Delegation selection, scheduling, and optional model configuration live in separate references. It does not add another orchestration API or require a task-management framework.
 
+Provider routing is an independent concern. When a provider-delegation policy is active, this skill chooses a logical preset and uses the provider-specific role supplied by that policy; configuration and mode switching belong to the separate `provider-delegation-mode` skill.
+
 ## Use
 
 ```text

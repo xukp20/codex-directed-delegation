@@ -16,6 +16,8 @@ All examples use `service_tier = "default"` (standard, not fast). These are sele
 
 Preset assets now live under `assets/models/`; existing installed role names remain unchanged. Moving an asset does not update an independently copied installed profile. Compare the selected file with the installed copy when synchronization is requested.
 
+For provider-specific variants, use `<provider-id>-<preset-id>` role names and explicitly set both `model_provider` and `model` in every role file. Define a shared provider once in the main user config rather than duplicating its endpoint or credentials across role files. Keep provider routing and mode activation in the separate `provider-delegation-mode` skill; this reference only covers the role's model-facing configuration.
+
 Use a standalone role file containing `name`, `description`, and `developer_instructions`, plus the selected model settings. For a personal installation, copy the selected example to `$CODEX_HOME/agents/<role_name>.toml` (normally `~/.codex/agents/`). Register only the requested roles explicitly in the main config when using named role references:
 
 ```toml

@@ -45,6 +45,12 @@ Send focused follow-ups describing the mismatch, evidence, desired correction, a
 
 The lead combines outputs, resolves cross-slice conflicts, and owns the final conclusion. Do not reread every low-risk input by default and erase the benefit of delegation. Keep substantive source evidence accessible for targeted checks.
 
+## Provider routing
+
+Model selection and provider routing are separate decisions. Select the logical model preset from the assignment's judgment and correction cost. If an applicable provider-delegation policy is active, map that preset to the exact provider-specific agent role named by the policy.
+
+Do not silently use an ordinary subscription-backed role when the active policy requires another provider. Provider registration, role generation, mode activation, and fallback policy belong to the separate `provider-delegation-mode` skill; this skill continues to own task selection, assignment quality, and acceptance.
+
 ## Task references
 
 Read only the reference matching the assignment; combine two when the task actually has both stages.
