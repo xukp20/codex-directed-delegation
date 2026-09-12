@@ -49,7 +49,7 @@ The lead combines outputs, resolves cross-slice conflicts, and owns the final co
 
 Model selection and provider routing are separate decisions. Select the logical model preset from the assignment's judgment and correction cost. If an applicable provider-delegation policy is active, map that preset to the exact provider-specific agent role named by the policy.
 
-Provider-specific roles are deny-by-default. Their presence in the role catalog is configuration, not authorization to use them. Use a provider-prefixed role only when an applicable active-provider policy explicitly names that provider and maps the selected preset to that exact role. If no such policy is active, use only the ordinary unprefixed/default subscription roles unless the user explicitly requests a provider role for the current assignment.
+Roles registered as managed by `provider-delegation-mode` are deny-by-default; do not infer management from a role's name. In inactive mode, do not select those managed roles, while all unrelated native, subscription-backed, and manually configured roles retain their normal behavior. In active mode, map to the exact role allowed by the selected provider and do not use any other subagent role.
 
 Do not silently use an ordinary subscription-backed role when an active policy requires another provider. Provider registration, role generation, mode activation, and fallback policy belong to the separate `provider-delegation-mode` skill; this skill continues to own task selection, assignment quality, and acceptance.
 
